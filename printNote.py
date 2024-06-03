@@ -13,8 +13,7 @@ from reportlab.graphics import shapes
 from reportlab.lib import colors
 from reportlab.lib.units import mm, inch
 
-# Get the path to the demos directory.
-base_path = os.path.dirname(__file__)
+# Path to the fonts directory.
 font_path = os.path.expanduser('~/Library/Fonts')
 
 # Add some fonts.
@@ -145,7 +144,8 @@ class NemonicNote(Note):
         if self.media.startswith('label'):
             heightActual = self.PAGE_SIZE_ACTUAL[media][1]
             marginOffset = (height - heightActual) / 2
-            marginsTBLR = [marginOffset + 4, marginOffset + 4, 8, 8]
+            tbMargin = 4 if heightActual < width else 8
+            marginsTBLR = [marginOffset + tbMargin, marginOffset + tbMargin, 8, 8]
         super().__init__(string, font_name, width, height, marginsTBLR)
 
     def display(self):
