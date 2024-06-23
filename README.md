@@ -20,5 +20,5 @@ Tested on macOS. Should work on Linux. Could work in Windows with some command l
 1. Setup virtual environment: `./setup`
 
 # Examples
-* Display a 3x2" label: `./printNotes -m label2 "This is a test" -d`
-* Print a 3x2" label: `./printNotes -m label2 "This is a test"`
+* Display a 3x2" label: `./printNote -m label2 "This is a test" -d`
+* Print a 3x2" label: `./printNote -m label2 "This is a test"`
