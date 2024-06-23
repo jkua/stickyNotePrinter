@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+# Wrapper script to create a shell, source the venv, and call the target script
+
+TARGET="python3 printNote.py"
+
+# Add quotes around each argument if it contains spaces
+for x in "${@}" ; do
+    # try to figure out if quoting was required for the $x
+    if [[ "$x" != "${x%[[:space:]]*}" ]]; then
+        x="\""$x"\""
+    fi
+    # echo $x
+    _ARGS=$_ARGS" "$x
+done
+
+/bin/zsh -c "source ./venv/bin/activate; exec $TARGET $_ARGS"
