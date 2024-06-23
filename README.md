@@ -17,11 +17,7 @@ Tested on macOS. Should work on Linux. Could work in Windows with some command l
 * TODO: Handle images
 
 # Installation
-1. Setup virtual environment
-	1. `python3 -m venv venv`
-	2. `source venv/bin/activate`
-	3. `pip3 install -r requirements.txt`
-	4. `deactivate`
+1. Setup virtual environment: `./setup`
 
 # Examples
 * Display a 3x2" label: `./printNotes -m label2 "This is a test" -d`
