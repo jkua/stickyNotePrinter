@@ -34,6 +34,8 @@ class Note:
         print(f'Page size: {self.pageWidth/inch:.3f} in x {self.pageHeight/inch:.3f} in')
         print(f'Body size: {self.bodyWidth()/inch:.3f} in x {self.bodyHeight()/inch:.3f} in')
 
+        self.preprocessText()
+
         self.createPage()
 
     def marginTop(self):
@@ -60,6 +62,8 @@ class Note:
     def bodyHeight(self):
         return self.pageHeight - self.marginTB()
 
+    def preprocessText(self):
+        self.string = self.string.replace('\\n', '<br/>')
 
     def wrapText(self, text, font_size, base_para_style):
         para_style = ParagraphStyle('myStyle',
